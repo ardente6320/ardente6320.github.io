@@ -27,6 +27,37 @@ pre.highlight code,
   padding: 10px;
 }
 
+.site-category li {
+  list-style: none;
+}
+.site-category h4 {
+  margin: 10px 0;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.site-category a{
+  display: inline-block;
+  font-size: 12px;
+  opacity: .8;
+  margin: 5px 0px 5px -30px;
+  padding: 5px 10px;
+  text-align: left;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+
+.site-category a:hover {
+  opacity: 1;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s; 
+}
+
 .categories a,
 .tags a {
   border: 1px solid #e25440;
