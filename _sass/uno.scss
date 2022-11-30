@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto+Slab:300,400)';
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans+KR|Ubuntu+Mono';
 /* http://meyerweb.com/eric/tools/css/reset/
 	 v2.0 | 20110126
 	 License: none (public domain)
@@ -925,7 +925,7 @@ html {
 	max-height: 100%; }
 
 body {
-	font-family: "Raleway", sans-serif;
+	font-family: 'Noto Sans KR';
 	font-size: 1em;
 	color: #666666; }
 
@@ -953,9 +953,9 @@ h5,
 h5 {
 	margin-top: .8em;
 	margin-bottom: .4em;
-	font-family: "Roboto Slab", serif;
+	font-family: 'Noto Sans KR';
 	font-weight: lighter;
-	color: #333333;
+	color: #3d3d3d;
 	-webkit-font-smoothing: antialiased; }
 
 h1 {
@@ -995,7 +995,7 @@ blockquote {
 	background: #f8f8f8;
 	border: 1px solid #eeeeee;
 	border-radius: 3px;
-	font-family: "Roboto Slab", serif;
+	font-family: 'Noto Sans KR';
 	font-weight: lighter;
 	font-style: italic;
 	font-size: 1.3em;
@@ -1063,7 +1063,7 @@ pre {
 	color: #999999; }
 
 .intro {
-	font-family: "Roboto Slab", serif;
+	font-family: 'Noto Sans KR';
 	font-size: 1.2em;
 	font-weight: lighter;
 	color: #999999; }
@@ -1099,7 +1099,6 @@ pre {
 .content-wrapper {
 	z-index: 800;
 	width: 60%;
-	max-width: 800px;
 	margin-left: 40%; }
 
 .content-wrapper__inner {
@@ -1164,6 +1163,11 @@ hr {
 	border: none;
 	box-shadow: none; }
 
+.post-header .post-title {
+	color:#3d3d3d;
+	font-weight: bold;
+}
+
 .post img {
 	max-width: 100%;
 	margin: 0 auto;
@@ -1173,7 +1177,7 @@ hr {
 	width: 95%; }
 .post hr {
 	display: block;
-	width: 30%;
+	width: 100%;
 	margin: 2em 0;
 	border-top: 1px solid #dddddd; }
 
@@ -1196,7 +1200,7 @@ hr {
 	color: #FFF; }
 
 .panel-subtitle {
-	font-family: "Roboto Slab", serif;
+	font-family: 'Noto Sans KR';
 	font-size: 1.2em;
 	font-weight: lighter;
 	letter-spacing: 3px;
