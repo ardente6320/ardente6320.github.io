@@ -108,7 +108,13 @@
                 {% for node in pages_list %}
                   {% if node.title != null %}
                     {% if node.layout == "category" %}
-                      <li><a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
+                      <li><a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }} 
+                        {% if site.categories[node.title].size != null %}
+                          ({{site.categories[node.title].size}})
+                        {% else %}
+                          (0)
+                        {% endif %}
+                        </a></li>
                     {% endif %}
                   {% endif %}
                 {% endfor %}
