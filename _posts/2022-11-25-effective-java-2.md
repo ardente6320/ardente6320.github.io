@@ -6,11 +6,11 @@ tags: [Java, Effective Java, Builder]
 ---
 <br>
 
-### **<span style="color:#ef5369">Builder 이전의 생성 방식</span>**
+#### **<span style="color:#ef5369">Builder 이전의 생성 방식</span>**
 
 <br>
 
-#### **<span style="color:#ef5369">점층적 생성자 패턴</span>**
+##### **<span style="color:#ef5369">점층적 생성자 패턴</span>**
 
 
 정적 팩토리 메소드나 생성자의 경우 파라미터가 많은 경우 적절히 대응하기가 쉽지 않다.
@@ -47,7 +47,7 @@ public class Car{
 
 <br>
 
-#### **<span style="color:#ef5369">자바빈즈 패턴</span>**
+##### **<span style="color:#ef5369">자바빈즈 패턴</span>**
 
 
 선택해야할 파라미터가 많은 경우 활용할 수 있는 **<span style="color:#ef5369">자바빈즈 패턴</span>**이 있다.
@@ -96,7 +96,7 @@ Setter메소드를 활용하게 되면 점층적 생성자 패턴에서 나타�
 
 ---
 
-### **<span style="color:#ef5369">빌더 패턴</span>**
+#### **<span style="color:#ef5369">빌더 패턴</span>**
 
 <br>
 
@@ -175,7 +175,7 @@ Car car = new Car.Builder(CarType.SEDAN)
 
 <br>
 
-### **<span style="color:#ef5369">추상 클래스를 활용한 빌더</span>**
+#### **<span style="color:#ef5369">추상 클래스를 활용한 빌더</span>**
 
 <br>
 

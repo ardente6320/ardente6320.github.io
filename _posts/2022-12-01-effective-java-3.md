@@ -6,7 +6,7 @@ tags: [Java, Effective Java, Singleton]
 ---
 <br>
 
-### **<span style="color:#ef5369">싱글턴이란</span>**
+#### **<span style="color:#ef5369">싱글턴이란</span>**
 
 싱글턴(Singleton)이란 인스턴스를 오직 하나만 생성할 수 있는 클래스를 말한다.
 
@@ -14,11 +14,11 @@ tags: [Java, Effective Java, Singleton]
 
 ---
 
-### **<span style="color:#ef5369">싱글턴 생성 방법</span>**
+#### **<span style="color:#ef5369">싱글턴 생성 방법</span>**
 
 <br>
 
-#### **<span style="color:#ef5369">1. `public static final` 필드 방식</span>**
+##### **<span style="color:#ef5369">1. `public static final` 필드 방식</span>**
 
 ```java
 public class CustomProperty {
@@ -55,7 +55,7 @@ public class CustomProperty {
 }
 ```
 
-#### **<span style="color:#ef5369">`public static final` 필드 방식의 장점</span>**
+##### **<span style="color:#ef5369">`public static final` 필드 방식의 장점</span>**
 
 
 **<span style="color:#ef5369">- 해당 클래스가 싱글텀임이 API에 명백히 들러난다.</span>**
@@ -64,7 +64,7 @@ public class CustomProperty {
 
 <br>
 
-#### **<span style="color:#ef5369">2. 정적 팩터리 메서드 방식</span>**
+##### **<span style="color:#ef5369">2. 정적 팩터리 메서드 방식</span>**
 
 ```java
 public class CustomProperty {
@@ -89,7 +89,7 @@ public class CustomProperty {
 
 `CustomProperty.getInstance()`는 항상 같은 객체의 참조를 반환하기 때문에 제2의 인스턴스는 결코 만들어지지 않는다. (리플렉션 예외는 동일하게 적용된다.)
 
-#### **<span style="color:#ef5369">정적 팩더리 메서드 방식의 장점</span>**
+##### **<span style="color:#ef5369">정적 팩더리 메서드 방식의 장점</span>**
 
 **<span style="color:#ef5369">- API를 바꾸지 않고도 싱글턴이 아니게 변경할 수 있다.</span>**
 
@@ -101,7 +101,7 @@ public class CustomProperty {
 
 ---
 
-### **<span style="color:#ef5369">싱글턴 직렬화(Serialization)</span>**
+#### **<span style="color:#ef5369">싱글턴 직렬화(Serialization)</span>**
 
 싱글턴 클래스를 직렬화할때 주의할 점이 있다.
 
@@ -139,7 +139,7 @@ public class CustomProperty implements Serializable{
 
 ---
 
-### **<span style="color:#ef5369">Enum 방식의 싱글턴</span>**
+#### **<span style="color:#ef5369">Enum 방식의 싱글턴</span>**
 
 `Enum` 방식의 싱글턴은 `public static final` 필드 방식과 비슷하다.
 

@@ -1,12 +1,12 @@
 ---
 title:  "WITH절 사용하기"
-date:   2022-12-01 11:18:50
+date:   2022-12-01 23:18:50
 categories: [PostgreSQL]
 tags: [PostgreSQL, sql]
 ---
 <br>
 
-### **<span style="color:#ef5369">WITH 절이란?</span>**
+#### **<span style="color:#ef5369">WITH 절이란?</span>**
 
 반복되는 구문이거나, 동일한 구문 또는 복잡한 구문을 작성할 때 매크로처럼 미리 선언하여 사용하는 서브쿼리라고 생각하면 된다.
 
@@ -22,7 +22,7 @@ tags: [PostgreSQL, sql]
 
 ---
 
-### **<span style="color:#ef5369">사용 방법</span>**
+#### **<span style="color:#ef5369">사용 방법</span>**
 
 ```sql
 /*
@@ -41,7 +41,7 @@ where ...
 
 ---
 
-### **<span style="color:#ef5369">예시</span>**
+#### **<span style="color:#ef5369">예시</span>**
 
 다음 쿼리는 employee(직원 상세 정보), employees(직원 정보), department(부서 정보) 테이블을 통해 부서명과 매니저 번호 기준으로 직원이 몇명있는지 파악하는 쿼리이다.
 

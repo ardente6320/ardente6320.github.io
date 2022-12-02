@@ -6,7 +6,7 @@ tags: [Java, Effective Java, Factory Method]
 ---
 <br>
 
-### **<span style="color:#ef5369">전통적인 인스턴스 생성 방법</span>**
+#### **<span style="color:#ef5369">전통적인 인스턴스 생성 방법</span>**
 
 <br>
 
@@ -40,7 +40,7 @@ Pizza cheesePizza = new Pizza("체다치즈","토마토소스",10);
 
 ---
 
-### **<span style="color:#ef5369">정적 팩토리 메소드</span>**
+#### **<span style="color:#ef5369">정적 팩토리 메소드</span>**
 
 <br>
 
@@ -60,11 +60,11 @@ String factoryStr = String.valueOf("Factory");
 
 ---
 
-### **<span style="color:#ef5369">장점</span>**
+#### **<span style="color:#ef5369">장점</span>**
 
 <br>
 
-#### **<span style="color:#ef5369">1. 이름을 가질 수 있다.</span>**
+##### **<span style="color:#ef5369">1. 이름을 가질 수 있다.</span>**
 
 
 생성자의 파라미터로는 해당 인스턴스가 어떤 역할을 하는지 특성을 제대로 설명하지 못한다.
@@ -101,7 +101,7 @@ Pizza cheesePizza = Pizza.cheesePizza(10);
 
 <br>
 
-#### **<span style="color:#ef5369">2. 호출될 때마다 인스턴스를 새로 생성하지는 않아도 된다.</span>**
+##### **<span style="color:#ef5369">2. 호출될 때마다 인스턴스를 새로 생성하지는 않아도 된다.</span>**
 
 
 정적 팩토리 메소드를 사용하게 되면 미리 만들어진 인스턴스를 캐싱하여 재활용하는 식으로 사용하여 무분별한 객체 생성을 막을 수있다.
@@ -138,7 +138,7 @@ class Mobility{
  
 <br>
 
-#### **<span style="color:#ef5369">4. 입력 파라미터에 따라 매번 다른 클래스의 인스턴스를 반환한다.</span>**
+##### **<span style="color:#ef5369">4. 입력 파라미터에 따라 매번 다른 클래스의 인스턴스를 반환한다.</span>**
 
 
 반환 타입의 하위 타입이기만 하면 어떤 클래스를 반환하든 상관없다.
@@ -162,7 +162,7 @@ public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
 
 <br>
 
-#### **<span style="color:#ef5369">5. 정적 팩토리 메소드를 작정하는 시점에는 반환할 객체의 클래스가 존재하지 않아도 된다.</span>**
+##### **<span style="color:#ef5369">5. 정적 팩토리 메소드를 작정하는 시점에는 반환할 객체의 클래스가 존재하지 않아도 된다.</span>**
 
 
 이 유연함을 통해 서비스 제공자 프레임워크를 만들 수 있었다.
@@ -177,18 +177,18 @@ private Class<?> serviceClass(){
 
 ---
 
-### **<span style="color:#ef5369">단점</span>**
+#### **<span style="color:#ef5369">단점</span>**
 
 <br>
 
-#### **<span style="color:#ef5369">1. 정적 팩토리 메소드만 제공하는 경우에는 상속이 불가능하다.</span>**
+##### **<span style="color:#ef5369">1. 정적 팩토리 메소드만 제공하는 경우에는 상속이 불가능하다.</span>**
 
 
 상속을 하려면 public이나 protected 생성자가 필요하니 정적 팩토리 메소드만 제공하면 하위 클래스를 생성할 수 없다.
 
 <br>
 
-#### **<span style="color:#ef5369">2. 개발자가 찾기 어렵다.</span>**
+##### **<span style="color:#ef5369">2. 개발자가 찾기 어렵다.</span>**
 
 
 API설명에 명확히 드러나지 않다보니 다른 개발자가 찾기 어렵다.

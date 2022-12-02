@@ -1,6 +1,6 @@
 ---
 title:  "DB에 존재하는 테이블 명 조회 및 컬럼 조회"
-date:   2022-12-01 11:09:13
+date:   2022-12-01 23:09:13
 categories: [PostgreSQL]
 tags: [PostgreSQL, sql]
 ---
@@ -12,7 +12,7 @@ tags: [PostgreSQL, sql]
 
 <br>
 
-### **<span style="color:#ef5369">`information_schema`란?</span>**
+#### **<span style="color:#ef5369">`information_schema`란?</span>**
 
 DB에 속한 데이터들의 정보를 담고 있는 메타데이터이다.
 
@@ -20,11 +20,11 @@ DB에 속한 데이터들의 정보를 담고 있는 메타데이터이다.
 
 ---
 
-### **<span style="color:#ef5369">테이블 조회</span>**
+#### **<span style="color:#ef5369">테이블 조회</span>**
 
 <br>
 
-#### **<span style="color:#ef5369">1. `pg_stat_user_tables` 사용하여 테이블 조회하기</span>**
+##### **<span style="color:#ef5369">1. `pg_stat_user_tables` 사용하여 테이블 조회하기</span>**
 
 ```sql
 SELECT schemaname  -- 스키마 명
@@ -36,7 +36,7 @@ FROM pg_stat_user_tables
 
 <br>
 
-#### **<span style="color:#ef5369">2. `information_schema` 사용하여 테이블 조회하기</span>**
+##### **<span style="color:#ef5369">2. `information_schema` 사용하여 테이블 조회하기</span>**
 
 ```sql
 select table_schema -- 스키마 명
@@ -53,11 +53,11 @@ where 1=1
 
 ---
 
-### **<span style="color:#ef5369">컬럼 조회</span>**
+#### **<span style="color:#ef5369">컬럼 조회</span>**
 
 <br>
 
-#### **<span style="color:#ef5369">1. information_schema 사용하여 컬럼 조회하기</span>**
+##### **<span style="color:#ef5369">1. information_schema 사용하여 컬럼 조회하기</span>**
 
 ```sql
 select table_schema -- 스키마 명
