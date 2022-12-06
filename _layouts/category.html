@@ -14,7 +14,7 @@ robots: noindex
     {% assign category = page.category | default: page.title %}
     {% for post in site.categories[category] %}
       <li>
-        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <h4 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h4>
         <div class="post-list__meta">
             <time datetime="{{ post.date | date: "%Y-%m-%d %H:%M" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time>
             {% if post.tags.size > 0 %}
