@@ -58,9 +58,8 @@ public class CustomProperty {
 ##### **<span style="color:#ef5369">`public static final` 필드 방식의 장점</span>**
 
 
-**<span style="color:#ef5369">- 해당 클래스가 싱글텀임이 API에 명백히 들러난다.</span>**
-  
-**<span style="color:#ef5369">- 간결함</span>**
+  - **<span style="color:#ef5369">해당 클래스가 싱글텀임이 API에 명백히 들러난다.</span>**
+  - **<span style="color:#ef5369">간결함</span>**
 
 <br>
 
@@ -91,11 +90,9 @@ public class CustomProperty {
 
 ##### **<span style="color:#ef5369">정적 팩더리 메서드 방식의 장점</span>**
 
-**<span style="color:#ef5369">- API를 바꾸지 않고도 싱글턴이 아니게 변경할 수 있다.</span>**
-
-**<span style="color:#ef5369">- 정적 팩터리를 제네릭 싱글턴 팩터리로 만들 수 있다.</span>**
-
-**<span style="color:#ef5369">- 정적 팩터리의 메서드 참조를 공급자로 사용할 수 있다.</span>**
+  - **<span style="color:#ef5369">API를 바꾸지 않고도 싱글턴이 아니게 변경할 수 있다.</span>**
+  - **<span style="color:#ef5369">정적 팩터리를 제네릭 싱글턴 팩터리로 만들 수 있다.</span>**
+  - **<span style="color:#ef5369">정적 팩터리의 메서드 참조를 공급자로 사용할 수 있다.</span>**
 
 이러한 장점들이 굳이 필요하지 않다면 `public static final` 필드 방식이 좋다.
 
