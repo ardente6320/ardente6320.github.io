@@ -1,6 +1,6 @@
 ---
 title:  "Effective Java-ITEM 2 Builder"
-date:   2022-11-25 14:26:15
+date:   2022-11-25 14:26:15+0900
 categories: [Java]
 tags: [Java, Effective Java, Builder]
 ---

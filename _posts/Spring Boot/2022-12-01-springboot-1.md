@@ -1,6 +1,6 @@
 ---
 title:  "Test Case 생성하기"
-date:   2022-12-01 23:59:20
+date:   2022-12-01 23:59:20+0900
 categories: [Spring Boot]
 tags: [SpringBoot, TestCase, JUnit]
 ---

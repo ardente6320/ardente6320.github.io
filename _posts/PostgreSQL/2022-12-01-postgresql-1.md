@@ -1,6 +1,6 @@
 ---
 title:  "DB에 존재하는 테이블 명 조회 및 컬럼 조회"
-date:   2022-12-01 23:09:13
+date:   2022-12-01 23:09:13+0900
 categories: [PostgreSQL]
 tags: [PostgreSQL, sql]
 ---

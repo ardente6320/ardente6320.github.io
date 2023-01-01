@@ -1,6 +1,6 @@
 ---
 title:  "Effective Java-ITEM 4 인스턴스화를 막으려거든 private 생성자를 사용하라"
-date:   2022-12-02 23:01:01
+date:   2022-12-02 23:01:01+0900
 categories: [Java]
 tags: [Java, Effective Java]
 ---

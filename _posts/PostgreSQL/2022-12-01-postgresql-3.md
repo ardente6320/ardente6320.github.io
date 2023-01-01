@@ -1,6 +1,6 @@
 ---
 title:  "LEAST,GREATEST를 활용하여 최솟값, 최댓값 찾기"
-date:   2022-12-01 23:30:02
+date:   2022-12-01 23:30:02+0900
 categories: [PostgreSQL]
 tags: [PostgreSQL, sql]
 ---

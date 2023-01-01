@@ -1,6 +1,6 @@
 ---
 title:  "Effective Java-ITEM 3 싱글턴임을 보증하라"
-date:   2022-12-01 10:34:25
+date:   2022-12-01 10:34:25+0900
 categories: [Java]
 tags: [Java, Effective Java, Singleton]
 ---

@@ -1,6 +1,6 @@
 ---
 title:  "Controller에서 파라미터 받는 방법(PathVariable, RequestParam, RequestBody)"
-date:   2022-12-05 17:33:23
+date:   2022-12-05 17:33:23+0900
 categories: [Spring Boot]
 tags: [SpringBoot, Controller]
 ---
