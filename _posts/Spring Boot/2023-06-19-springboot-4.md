@@ -179,7 +179,7 @@ public class MyServiceB{
 
 런타임 중에 계속적으로 `new` 하게 되어 `StackOverFlow`가 발생하게 된다.
 
-```shell
+```
 Caused by: java.lang.StackOverflowError: null
 ```
 
@@ -208,7 +208,7 @@ public class MyServiceB{
     }
 }
 ```
-```shell
+```
 Description: 
 The dependencies of some of the beans in the application context form a cycle: 
 ┌─────┐ 
