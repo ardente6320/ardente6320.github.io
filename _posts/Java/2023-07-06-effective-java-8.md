@@ -75,7 +75,9 @@ tags: [Java, Effective Java]
 
 `finalizer`나 `cleaner`를 사용하지 않고, `AutoCloseable`을 구현하고, 
 
-클라이언트에서 인스턴스를 다 쓰고 나면 `close()`를 호출하면 된다.(`try-with-resources`를 사용하여 예외가 발생해도 종료되도록 처리)
+클라이언트에서 인스턴스를 다 쓰고 나면 `close()`를 호출하면 된다.
+
+(`try-with-resources`를 사용하여 예외가 발생해도 종료되도록 처리)
 
 그리고 `close()`에서 이 객체는 더 이상 유효하지 않음을 필드에 기록하고,
 
