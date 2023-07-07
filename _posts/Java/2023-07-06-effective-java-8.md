@@ -27,6 +27,7 @@ tags: [Java, Effective Java]
 
   결국 새로운 파일을 열지 못해 프로그램이 실패할 수 있다.
 
+<br>
 
 - **<span style="color:#ef5369">실행 시간을 예측 할 수 없다.</span>**
 
@@ -36,6 +37,7 @@ tags: [Java, Effective Java]
 
   알수 없는 `OutOfMemoryError`를 만나고 프로그램이 실패할 수 있다.
 
+<br>
 
 - **<span style="color:#ef5369">수행 여부를 보장하지 않는다.</span>**
 
@@ -47,6 +49,7 @@ tags: [Java, Effective Java]
 
   해당 메소드로 강제 호출 시도를 하지 말아야 한다.
 
+<br>
 
 - **<span style="color:#ef5369">심각한 성능 문제를 동반한다.</span>**
 
@@ -56,6 +59,7 @@ tags: [Java, Effective Java]
   
   역시 그의 대가로 성능이 약 5배 가량 느려진다는 것을 말한다.
 
+<br>
 
 - **<span style="color:#ef5369">finalizer 공격에 노출되어 심각한 보안 문제를 일으킬 수 있다.</span>**
 
