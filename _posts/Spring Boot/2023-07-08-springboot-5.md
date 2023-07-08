@@ -55,7 +55,7 @@ public interface OrderService{
 }
 ```
 
-그리고 아래와 같이 상속받을 각각의 서비스를 생성한다.
+그리고 아래와 같이 주문 서비스를 상속받은 각각의 서비스 구현체를 생성한다.
 
 #### **<span style="color:#ef5369">포장 주문 서비스</span>**
 
@@ -129,11 +129,11 @@ public class OrderServiceFactory{
 }
 ```
 
-위와 같이 특정 값에 따라 서비스를 먼저 주입한다.
+위와 같이 특정 값에 따라 서비스를 등록해준다.
 
 단 이때 동일한 `OrderService`를 상속받은 서비스들이 `OrderServiceFactory`에 등록될 것이다.
 
-그러면 이 팩토리를 이제 `controller`에서 다음과 같이 사용하면 된다.
+그러면 이 팩토리를 이제 `OrderController`에서 다음과 같이 사용하면 된다.
 
 #### **<span style="color:#ef5369">주문 컨트롤러</span>**
 ```java
