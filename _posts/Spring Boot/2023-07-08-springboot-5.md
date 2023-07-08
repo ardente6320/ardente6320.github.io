@@ -182,7 +182,6 @@ public class OrderServiceFactory{
 
 그러면 이 팩토리를 이제 `OrderController`에서 다음과 같이 사용하면 된다.
 
-
 ```java
 @RestController
 @RequestMapping("/order")
