@@ -16,25 +16,81 @@ tags: [SpringBoot, Factory Pattern, Service Factory]
 먼저 가장 쉽게 생각할 수 있는 방식은 `if`문이나 `switch`로 나눠서 처리하는 방식이다.
 
 ```java
-@Service
-class OrderService{
-    public int getOrderAmount(Order order){
-        int optional = 0;
-        
+@RestController
+@RequestMapping("/order")
+@RequiredArgsConstructor
+public class OrderController{
+    private final OrderServoce packageOrderServiceImpl;
+    private final OrderServoce deliverOrderServiceImpl;
+    private final OrderServoce storeOrderServiceImpl;
+
+    @PostMapping(value = "/amount", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public ResponseEntity<?> order(@RequestBody OrderInfo orderInfo){
+        Map<String,Object> response = new HashMap<>();
+
+        int amount = 0;
         if(order.getOrderType() == OrderType.PACKAGE){
-            optional -= 2000; //포장 주문은 2000원 할인   
+            amount = packageOrderServiceImpl.getOrderAmount(orderInfo());
         }else if(order.getORderType() == OrderType.DELIVER){
-            optional += 3000; //배달비 3000원
+            amount = deliverOrderServiceImpl.getOrderAmount(orderInfo());
         }else if(order.getOrderType() == OrderType.STORE){
-            optional += 1000; //상차림비 1000원
+            amount = storeOrderServiceImpl.getOrderAmount(orderInfo());
         }
-        
-        return order.getAmount() + optional;
+
+        response.put("amount", amount);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
 ```
 
-위코드를 보면 `OrderType`을 기준으로 추가 금액을 다르게 처리하고 있다.
+#### **<span style="color:#ef5369">주문 서비스 인터페이스</span>**
+
+```java
+//주문 서비스
+public interface OrderService{
+    int getOrderAmount(OrderInfo order);
+}
+```
+
+#### **<span style="color:#ef5369">포장 주문 서비스</span>**
+
+```java
+//포장 주문 서비스
+@Service
+public class PackageOrderServiceImpl implements OrderService{
+    @Override
+    int getOrderAmount(OrderInfo order){
+        return order.getAmount() - 2000;
+    }
+}
+```
+
+#### **<span style="color:#ef5369">배달 주문 서비스</span>**
+
+```java
+//배달 주문 서비스
+@Service
+public class DeliveryOrderServiceImpl implements OrderService{
+    @Override
+    int getOrderAmount(OrderInfo order){
+        return order.getAmount() + 3000;
+    }
+}
+```
+#### **<span style="color:#ef5369">매장 주문 서비스</span>**
+
+```java
+//매장 주문 서비스
+@Service
+public class StoreOrderServiceImpl implements OrderService{
+    @Override
+    int getOrderAmount(OrderInfo order){
+        return order.getAmount() + 1000;
+    }
+}
+```
+
+위코드를 보면 `Controller`에서 각각의 `OrderType`에 따라 올바를 서비스를 호출하고 있다.
 
 현재는 메소드가 하나지만 메소드가 여러개가 되고 각 메소드에서 분기로 나눈다면 유지보수하기 어려워진다.
 
@@ -42,25 +98,21 @@ class OrderService{
 
 ---
 
-이 문제를 해결 하기위해선 우선 각 서비스가 상속받을 서비스 인터페이스를 생성한다.
-
-#### **<span style="color:#ef5369">주문 서비스</span>**
+이 문제를 해결 하기위해선 우선 각 서비스가 상속받은 서비스에 타입 반환 메소드를 추가해준다.
 
 ```java
-//주문 서비스
 public interface OrderService{
     int getOrderAmount(OrderInfo order);
     
+    //타입 반환
     OrderType getType();
 }
 ```
 
-그리고 아래와 같이 주문 서비스를 상속받은 각각의 서비스 구현체를 생성한다.
-
-#### **<span style="color:#ef5369">포장 주문 서비스</span>**
+그리고 아래와 같이 주문 서비스를 상속받은 각각의 서비스 구현체에다가 각각의 타입을 반환하도록 한다.
 
 ```java
-//포장 주문 서비스
+@Service
 public class PackageOrderServiceImpl implements OrderService{
     @Override
     int getOrderAmount(OrderInfo order){
@@ -73,11 +125,8 @@ public class PackageOrderServiceImpl implements OrderService{
     }
 }
 ```
-
-#### **<span style="color:#ef5369">배달 주문 서비스</span>**
-
 ```java
-//배달 주문 서비스
+@Service
 public class DeliveryOrderServiceImpl implements OrderService{
     @Override
     int getOrderAmount(OrderInfo order){
@@ -90,11 +139,8 @@ public class DeliveryOrderServiceImpl implements OrderService{
     }
 }
 ```
-
-#### **<span style="color:#ef5369">매장 주문 서비스</span>**
-
 ```java
-//매장 주문 서비스
+@Service
 public class StoreOrderServiceImpl implements OrderService{
     @Override
     int getOrderAmount(OrderInfo order){
