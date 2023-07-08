@@ -40,9 +40,11 @@ class OrderService{
 
 만약 새로운 주문 서비스가 생겨버리게 되면 모든 `if`나 `switch`문을 손봐야할 것이다.
 
+---
+
 이 문제를 해결 하기위해선 우선 각 서비스가 상속받을 서비스 인터페이스를 생성한다.
 
-#### 주문 서비스
+#### **<span style="color:#ef5369">주문 서비스</span>**
 
 ```java
 //주문 서비스
@@ -55,7 +57,7 @@ public interface OrderService{
 
 그리고 아래와 같이 상속받을 각각의 서비스를 생성한다.
 
-#### 포장 주문 서비스
+#### **<span style="color:#ef5369">포장 주문 서비스</span>**
 
 ```java
 //포장 주문 서비스
@@ -72,7 +74,7 @@ public class PackageOrderServiceImpl implements OrderService{
 }
 ```
 
-#### 배달 주문 서비스
+#### **<span style="color:#ef5369">배달 주문 서비스</span>**
 
 ```java
 //배달 주문 서비스
@@ -89,7 +91,7 @@ public class DeliveryOrderServiceImpl implements OrderService{
 }
 ```
 
-#### 매장 주문 서비스
+#### **<span style="color:#ef5369">매장 주문 서비스</span>**
 
 ```java
 //매장 주문 서비스
@@ -110,7 +112,7 @@ public class StoreOrderServiceImpl implements OrderService{
 
 우선 먼저 `ServiceFactory`를 생성한다.
 
-#### 주문 서비스 팩토리
+#### **<span style="color:#ef5369">주문 서비스 팩토리</span>**
 
 ```java
 @Component
@@ -133,7 +135,7 @@ public class OrderServiceFactory{
 
 그러면 이 팩토리를 이제 `controller`에서 다음과 같이 사용하면 된다.
 
-#### 주문 컨드롤러
+#### **<span style="color:#ef5369">주문 컨트롤러</span>**
 ```java
 @RestController
 @RequestMapping("/order")
@@ -150,6 +152,8 @@ public class OrderController{
     }
 }
 ```
+
+---
 
 이제는 장황하게 `if`나 `switch`를 작성할 필요없고 이해하기 쉽고 유지보수가 용이하게 사용할 수 있게 되었다.
 
