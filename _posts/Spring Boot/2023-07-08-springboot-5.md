@@ -119,6 +119,7 @@ public class StoreOrderServiceImpl implements OrderService{
 public class OrderServiceFactory{
     private final Map<OrderType, OrderService> orderServiceMap = new HashMap<>();
     
+    //생성자 주입
     public OrderServiceFactory(List<OrderService> orderServices){
         orderServices.forEach(service -> orderServiceMap.put(service.getOrderType(), service));
     }
@@ -129,7 +130,7 @@ public class OrderServiceFactory{
 }
 ```
 
-위와 같이 특정 값에 따라 서비스를 등록해준다.
+위와 같이 특정 값에 따라 서비스를 등록해준다. 서비스는 생성자 주입을 통해 등록한다.
 
 단 이때 동일한 `OrderService`를 상속받은 서비스들이 `OrderServiceFactory`에 등록될 것이다.
 
