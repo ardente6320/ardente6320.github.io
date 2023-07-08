@@ -90,7 +90,7 @@ public class StoreOrderServiceImpl implements OrderService{
 }
 ```
 
-위코드를 보면 `Controller`에서 각각의 `OrderType`에 따라 올바를 서비스를 호출하고 있다.
+위코드를 보면 `Controller`에서 각각의 `OrderType`에 따라 필요한 서비스를 호출하고 있다.
 
 현재는 메소드가 하나지만 메소드가 여러개가 되고 각 메소드에서 분기로 나눈다면 유지보수하기 어려워진다.
 
@@ -98,7 +98,7 @@ public class StoreOrderServiceImpl implements OrderService{
 
 ---
 
-이 문제를 해결 하기위해선 우선 각 서비스가 상속받은 서비스에 타입 반환 메소드를 추가해준다.
+이 문제를 해결 하기위해선 우선 각 서비스에 타입 반환 메소드를 `Override`하여 추가해준다.
 
 ```java
 public interface OrderService{
