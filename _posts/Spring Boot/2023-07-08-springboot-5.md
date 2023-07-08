@@ -182,7 +182,7 @@ public class OrderServiceFactory{
 
 그러면 이 팩토리를 이제 `OrderController`에서 다음과 같이 사용하면 된다.
 
-#### **<span style="color:#ef5369">주문 컨트롤러</span>**
+
 ```java
 @RestController
 @RequestMapping("/order")
