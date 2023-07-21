@@ -20,19 +20,19 @@ tags: [Java, Effective Java, Builder]
 ```java
 public class Car{
     private final int type;
-	private final int doors;
+    private final int doors;
     private final int oilType;
     
     public Car(int type){
-    	this(type, 4);
+        this(type, 4);
     }
     
     public Car(int type, int doors){
-    	this(type, doors, 0);
+        this(type, doors, 0);
     }
     
     public Car(int type, int doors, int oilType){
-    	this.doors = doors;
+        this.doors = doors;
         this.type = type;
         this.oilType = oilType;
     }
@@ -56,32 +56,32 @@ public class Car{
 
 ```java
 public Car{
-	private int type;
+    private int type;
     private int doors = 4; //필수값 설정
     private int oilType;
     
     public Car(){}
     
     public void setType(int type){
-    	this.type = type;
+        this.type = type;
     }
     
     public void setDoors(int doors){
-    	this.doors = doors;
+        this.doors = doors;
     }
     
     public void setOilType(int oilType){
-    	this.oilType = oilType;
+        this.oilType = oilType;
     }
     
     public int getType(){
-    	return type;
+        return type;
     }
     public int getDoors(){
-    	return doors;
+        return doors;
     }
     public int getOilType(){
-    	return oilType;
+        return oilType;
     }
 }
 ```
@@ -120,38 +120,38 @@ Setter메소드를 활용하게 되면 점층적 생성자 패턴에서 나타�
 enum CarType{SEDAN,SUV,CUV,SPORT,TRUCK}
 enum OilType{GASOLINE,DIESEL,LPG}
 public class Car{
-	private final CarType type;
-	private final int doors;
-	private final OilType oilType;
+    private final CarType type;
+    private final int doors;
+    private final OilType oilType;
 
-	public static class Builder{
-		//필수 파라미터
-		private final CarType type;
+    public static class Builder{
+        //필수 파라미터
+        private final CarType type;
 
-		//선택 파라미터의 경우 Default 값으로 셋팅
-		private int doors = 4;
-		private OilType oilType = OilType.GASOLINE;
+        //선택 파라미터의 경우 Default 값으로 셋팅
+        private int doors = 4;
+        private OilType oilType = OilType.GASOLINE;
 
-		public Builder(CarType type){
-			this.type = type;
-		}
+        public Builder(CarType type){
+            this.type = type;
+        }
 
-		public Builder doors(int val){
-			this.doors = val;
+        public Builder doors(int val){
+            this.doors = val;
 
-			return this;
-		}
+            return this;
+        }
 
-		public Builder oilType(OilType val){
-			this.oilType = val;
+        public Builder oilType(OilType val){
+            this.oilType = val;
 
-			return this;
-		}
+            return this;
+        }
 
-		public Car build(){
-			return new Car(this);
-		}
-	}
+        public Car build(){
+            return new Car(this);
+        }
+    }
 }
 ```
 
@@ -188,25 +188,25 @@ Car car = new Car.Builder(CarType.SEDAN)
 
 ```java
 abstract class Burger{
-	public enum Topping{CHEEZE,PATTY,LETTUCE, TOMATO,MUSGROOM, ONION, PICKLE, EGG}
-	final Set<Topping> toppings;
+    public enum Topping{CHEEZE,PATTY,LETTUCE, TOMATO,MUSGROOM, ONION, PICKLE, EGG}
+    final Set<Topping> toppings;
 
-	abstract static class Builder<T extends Builder<T>>{
-		EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class);
+    abstract static class Builder<T extends Builder<T>>{
+        EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class);
 
-		protected abstract T self();
+        protected abstract T self();
 
-		public T addTopping(Topping topping){
-			toppings.add(topping);
-			return self();
-		}
+        public T addTopping(Topping topping){
+            toppings.add(topping);
+            return self();
+        }
 
-		public abstract Burger build();
-	}
+        public abstract Burger build();
+    }
 
-	protected Burger(Builder<?> builder){
-		toppings = builder.toppings.clone();
-	}
+    protected Burger(Builder<?> builder){
+        toppings = builder.toppings.clone();
+    }
 }
 ```
 
@@ -214,31 +214,31 @@ abstract class Burger{
 
 ```java
 class EggSlut extends Burger{
-	public enum Side{NONE, FRENCH_FRIES, SLUT, COLA}
-	private final Side side;
+    public enum Side{NONE, FRENCH_FRIES, SLUT, COLA}
+    private final Side side;
 
-	public static class Builder extends Burger.Builder<Builder>{
-		private final Side side;
+    public static class Builder extends Burger.Builder<Builder>{
+        private final Side side;
 
-		@Override
-		protected Builder self(){
-			return this;
-		}
+        @Override
+        protected Builder self(){
+            return this;
+        }
 
-		public Builder(Side side){
-			this.side = Objects.requireNonNull(side);
-		}
+        public Builder(Side side){
+            this.side = Objects.requireNonNull(side);
+        }
 
-		@Override
-		public EggSlut build(){
-			return new EggSlut(this);
-		}
-	}
+        @Override
+        public EggSlut build(){
+            return new EggSlut(this);
+        }
+    }
 
-	public EggSlut(Builder builder){
-		super(builder);
-		side = builder.side;
-	}
+    public EggSlut(Builder builder){
+        super(builder);
+        side = builder.side;
+    }
 }
 ```
 
