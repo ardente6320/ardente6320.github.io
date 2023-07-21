@@ -8,7 +8,11 @@ tags: [Java, Effective Java, equals]
 
 `equals` 메소드는 재정의하기 쉬워 보이지만 정말 조심해서 재정의 해야한다.
 
+---
+
 #### **<span style="color:#ef5369">재정의 하지 말아야 하는 경우</span>**
+
+<br>
 
 **1. 각 인스턴스가 본질적으로 고유한 경우**
 
@@ -44,6 +48,8 @@ public boolean equals(Object o) {
 
 #### **<span style="color:#ef5369">재정의를 해야하는 경우</span>**
 
+<br>
+
 객체 식별정(물리적으로 같은가)이 아니라 논리적 동치성을 확인해야 하는데,
 
 상위 클래스의 `equals`가 논리적 동치성을 비교하도록 재정의되지 않았을 경우이다.
@@ -56,6 +62,8 @@ public boolean equals(Object o) {
 
 #### **<span style="color:#ef5369">재정의 일반 규약</span>**
 
+<br>
+
 **1. 반사성(reflexivity)**
 
 `null`이 아닌 모든 참조 값 `x`에 대해, `x.equals(x)`는 `true`다.
@@ -67,15 +75,11 @@ public boolean equals(Object o) {
 
 **3. 추이성(transitivity)**
 
-`null`이 아닌 모든 참조 값 `x`,`y`,`z`에 대해, `x.equals(y)`와 `y.equals(z)`가 `true`이면
-
-`x.equals(z)`도 `true`다.
+`null`이 아닌 모든 참조 값 `x`,`y`,`z`에 대해, `x.equals(y)`와 `y.equals(z)`가 `true`이면 `x.equals(z)`도 `true`다.
 
 **4. 일관성(consistency)**
 
-`null`이 아닌 모든 참조값 `x`,`y`에 대해, `x.equals(y)`를 반복해서 호출하면 항상 `true`를 반환하거나
-
-항상 `false`를 반환한다.
+`null`이 아닌 모든 참조값 `x`,`y`에 대해, `x.equals(y)`를 반복해서 호출하면 항상 `true`를 반환하거나 항상 `false`를 반환한다.
 
 **5. `null` 아님**
 
@@ -114,6 +118,8 @@ public boolean equals(Object o){
 ---
 
 #### **<span style="color:#ef5369">양질의 `equals`메소드 구현 방법</span>**
+
+<br>
 
 **1. `==`연산자를 사용해 입력이 자기 자신의 참조인지 확인한다.**
 
@@ -207,6 +213,4 @@ class Person{
 
 결론적으로 꼭 필요한 경우가 아니라면 `equals`는 재정의하지 말자.
 
-만약 재정의하게 된다면 클래스의 핵심 필드를 모두 빠짐없이 확인해야하고, 
-
-다섯가지 규약을 확실히 지켜가며 비교해야한다.
+만약 재정의하게 된다면 클래스의 핵심 필드를 모두 빠짐없이 확인해야하고, 다섯가지 규약을 확실히 지켜가며 비교해야한다.
