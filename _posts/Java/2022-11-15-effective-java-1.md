@@ -16,7 +16,7 @@ tags: [Java, Effective Java, Factory Method]
 
 ```java
 class Pizza{
-	private final String cheese;
+private final String cheese;
 	private final String topping;
 	private final int size;
 
