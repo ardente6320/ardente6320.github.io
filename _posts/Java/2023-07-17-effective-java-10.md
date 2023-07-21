@@ -113,7 +113,7 @@ public boolean equals(Object o){
 
 ---
 
-#### **<span style="color:#ef5369">양질의 equals`메소드 구현 방법</span>**
+#### **<span style="color:#ef5369">양질의 `equals`메소드 구현 방법</span>**
 
 **1. `==`연산자를 사용해 입력이 자기 자신의 참조인지 확인한다.**
 
@@ -174,6 +174,8 @@ public boolean equals(MyClass a){
 위 코드는 `Object.equals`를 재정의한 것이 아닌 다중정의를 한 것이다.
 
 이 메소드는 `@Override`어노테이션이 긍정오류를 내개 하고 보안 측면에서도 잘못된 정보를 준다.
+
+---
 
 위 코드를 하나의 메소드로 나타내면 다음과 같다.
 
