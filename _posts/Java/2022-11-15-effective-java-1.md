@@ -17,14 +17,14 @@ tags: [Java, Effective Java, Factory Method]
 ```java
 class Pizza{
 private final String cheese;
-	private final String topping;
-	private final int size;
+    private final String topping;
+    private final int size;
 
-	public Pizza(String cheese, String topping, int size){
-		this.cheese = cheese;
-		this.topping = topping;
-		this.size = size;
-	}
+    public Pizza(String cheese, String topping, int size){
+        this.cheese = cheese;
+        this.topping = topping;
+        this.size = size;
+    }
     ...
 }
 ```
@@ -72,23 +72,23 @@ String factoryStr = String.valueOf("Factory");
 
 ```java
 class Pizza{
-	private final String cheese;
-	private final String topping;
-	private final int size;
+    private final String cheese;
+    private final String topping;
+    private final int size;
 
-	public Pizza(String cheese, String topping, int size){
-		this.cheese = cheese;
-		this.topping = topping;
-		this.size = size;
-	}
+    public Pizza(String cheese, String topping, int size){
+        this.cheese = cheese;
+        this.topping = topping;
+        this.size = size;
+    }
 
-	public static Pizza cheesePizza(int size){
-		return new Pizza("체다치즈", "토마토소스", size);
-	}
+    public static Pizza cheesePizza(int size){
+        return new Pizza("체다치즈", "토마토소스", size);
+    }
 
-	public static Pizza peperoniPizza(int size){
-		return new Pizza("기본치즈", "페퍼로니", size);
-	}
+    public static Pizza peperoniPizza(int size){
+        return new Pizza("기본치즈", "페퍼로니", size);
+    }
 }
 
 //생성자 방식
@@ -122,14 +122,14 @@ Boolean value = Boolean.valueOf(true);
 
 ```java
 class Mobility{
-	public static Mobility of(String type){
-		if(type.equalsIgnoreCase("car")){
-			return new Car();
-		}else if(type.equalsIgnoreCase("bike")){
-			return new Bike();
-		}
-		...
-	}
+    public static Mobility of(String type){
+        if(type.equalsIgnoreCase("car")){
+            return new Car();
+        }else if(type.equalsIgnoreCase("bike")){
+            return new Bike();
+        }
+        ...
+    }
 }
 ```
 
@@ -148,14 +148,14 @@ Java의 EnumSet클래스가 그 예가 될 수 있다.
 
 ```java
 public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
-	Enum<?>[] universe = getUniverse(elementType);
-	if (universe == null)
-		throw new ClassCastException(elementType + " not an enum");
+    Enum<?>[] universe = getUniverse(elementType);
+    if (universe == null)
+        throw new ClassCastException(elementType + " not an enum");
 
-	if (universe.length <= 64)
-		return new RegularEnumSet<>(elementType, universe);
-	else
-		return new JumboEnumSet<>(elementType, universe);
+    if (universe.length <= 64)
+        return new RegularEnumSet<>(elementType, universe);
+    else
+        return new JumboEnumSet<>(elementType, universe);
 }
 ```
 
@@ -170,7 +170,7 @@ public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
 
 ```java
 private Class<?> serviceClass(){
-	return Class.forName("com.test.services.TestService");
+    return Class.forName("com.test.services.TestService");
 }
 ```
 
