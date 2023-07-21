@@ -107,7 +107,7 @@ Pizza cheesePizza = Pizza.cheesePizza(10);
 정적 팩토리 메소드를 사용하게 되면 미리 만들어진 인스턴스를 캐싱하여 재활용하는 식으로 사용하여 무분별한 객체 생성을 막을 수있다.
 
 ```java
-Boolean vlaue = Boolean.valueOf(true);
+Boolean value = Boolean.valueOf(true);
 ```
 
 위와 같이 Boolean 객체를 new 하여 인스턴스화하지 않고 받아올 수 있다.
