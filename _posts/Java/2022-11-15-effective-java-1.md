@@ -16,7 +16,7 @@ tags: [Java, Effective Java, Factory Method]
 
 ```java
 class Pizza{
-    private final String cheese;
+	private final String cheese;
 	private final String topping;
 	private final int size;
 
@@ -25,7 +25,6 @@ class Pizza{
 		this.topping = topping;
 		this.size = size;
 	}
-    
     ...
 }
 ```
@@ -129,7 +128,7 @@ class Mobility{
 		}else if(type.equalsIgnoreCase("bike")){
 			return new Bike();
 		}
-        ...
+		...
 	}
 }
 ```
@@ -149,14 +148,14 @@ Java의 EnumSet클래스가 그 예가 될 수 있다.
 
 ```java
 public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
-    Enum<?>[] universe = getUniverse(elementType);
-    if (universe == null)
-        throw new ClassCastException(elementType + " not an enum");
+	Enum<?>[] universe = getUniverse(elementType);
+	if (universe == null)
+		throw new ClassCastException(elementType + " not an enum");
 
-    if (universe.length <= 64)
-        return new RegularEnumSet<>(elementType, universe);
-    else
-        return new JumboEnumSet<>(elementType, universe);
+	if (universe.length <= 64)
+		return new RegularEnumSet<>(elementType, universe);
+	else
+		return new JumboEnumSet<>(elementType, universe);
 }
 ```
 
@@ -171,7 +170,7 @@ public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
 
 ```java
 private Class<?> serviceClass(){
-    return Class.forName("com.test.services.TestService");
+	return Class.forName("com.test.services.TestService");
 }
 ```
 
