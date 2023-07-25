@@ -22,7 +22,7 @@ tags: [Java, Effective Java, equals, hashCode]
 
 `euqals`는 물리적으로 다른 두 객체를 논리적으로는 같다고 할 수는 있다.
 
-하지만 `Object`의 기본 `hashCode`메소드는 이둘이 전혀 다르다고 판단하여, 서로 다른 값을 받환한다.
+하지만 `Object`의 기본 `hashCode`메소드는 이둘이 전혀 다르다고 판단하여, 서로 다른 값을 반환한다.
 
 ```java
 Map<Person, String> personMap = new HashMap<>();
